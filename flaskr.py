@@ -15,7 +15,7 @@ import os
 from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
-from flask.ext.babel import Babel, gettext, ngettext
+from flask.ext.babel import Babel, gettext as gettext_babel, ngettext as ngettext_babel
 
 # create our little application :)
 app = Flask(__name__)
@@ -29,6 +29,27 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
 
 
+# Create helpers for PhraseApp
+def gettext(msgid):
+    if app.config['PHRASE_ENABLED']:
+        return "{{__phrase_" + msgid + "__}}"
+    else:
+        return gettext_babel(msgid)
+
+def ngettext():
+    if app.config['PHRASE_ENABLED']:
+        return "{{__phrase_" + msgid + "__}}"
+    else:
+        return ngettext_babel(msgid)
+
+# Reload Jinja gettext 
+app.jinja_env.install_gettext_callables(
+    gettext,
+    ngettext,
+    newstyle=True
+)
+
+
 # Load default config and override config from an environment variable
 app.config.update(dict(
     DATABASE=os.path.join(app.root_path, 'flaskr.db'),
@@ -39,7 +60,8 @@ app.config.update(dict(
     LANGUAGES = {
     'en': 'English',
     'de': 'Deutsch'
-    }
+    },
+    PHRASE_ENABLED = True
 ))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 

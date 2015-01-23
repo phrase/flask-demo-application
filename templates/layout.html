@@ -15,3 +15,12 @@
   {% endfor %}
   {% block body %}{% endblock %}
 </div>
+
+<script>
+    var phrase_auth_token = 'YOUR_PHRASEAPP_TOKEN';
+    (function() {
+        var phraseapp = document.createElement('script'); phraseapp.type = 'text/javascript'; phraseapp.async = true;
+        phraseapp.src = ['https://', 'phraseapp.com/assets/phrase/0.1/app.js?', new Date().getTime()].join('');
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(phraseapp, s);
+    })();
+</script>
