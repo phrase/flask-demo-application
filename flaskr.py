@@ -15,10 +15,19 @@ import os
 from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
-
+from flask.ext.babel import Babel, gettext, ngettext
 
 # create our little application :)
 app = Flask(__name__)
+
+# create a Bable instance for our app
+babel = Babel(app)
+
+# Check the Accept-Language header and make a smart choice
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
@@ -26,7 +35,11 @@ app.config.update(dict(
     DEBUG=True,
     SECRET_KEY='development key',
     USERNAME='admin',
-    PASSWORD='default'
+    PASSWORD='default',
+    LANGUAGES = {
+    'en': 'English',
+    'de': 'Deutsch'
+    }
 ))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
@@ -70,7 +83,7 @@ def add_entry():
     db.execute('insert into entries (title, text) values (?, ?)',
                [request.form['title'], request.form['text']])
     db.commit()
-    flash('New entry was successfully posted')
+    flash(gettext('New entry was successfully posted'))
     return redirect(url_for('show_entries'))
 
 
@@ -84,7 +97,7 @@ def login():
             error = 'Invalid password'
         else:
             session['logged_in'] = True
-            flash('You were logged in')
+            flash(gettext('You were logged in'))
             return redirect(url_for('show_entries'))
     return render_template('login.html', error=error)
 
@@ -92,7 +105,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
-    flash('You were logged out')
+    flash(gettext('You were logged out'))
     return redirect(url_for('show_entries'))
 
-app.run(host='0.0.0.0')
+app.run(host='0.0.0.0', port=5000)
