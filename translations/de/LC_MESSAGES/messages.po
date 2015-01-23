@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
-#, 
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-01-23 15:43+0100\n"
+"POT-Creation-Date: 2015-01-23 15:59+0100\n"
 "PO-Revision-Date: 2015-01-23 15:44+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -21,6 +20,14 @@ msgstr ""
 #: flaskr.py:86
 msgid "New entry was successfully posted"
 msgstr "Neuer Eintrag erfolgreich veröffentlicht"
+
+#: flaskr.py:95
+msgid "Invalid username"
+msgstr "Benutzername ungültig"
+
+#: flaskr.py:97
+msgid "Invalid password"
+msgstr "Kennwort ungültig"
 
 #: flaskr.py:100
 msgid "You were logged in"
