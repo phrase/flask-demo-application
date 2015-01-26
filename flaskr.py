@@ -1,69 +1,35 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    Flaskr
-    ~~~~~~
+    Flaskr + Babel + PhraseApp
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    A microblog example application written as Flask tutorial with
-    Flask and sqlite3.
+    Modified Flask demo app showing localization with Flask-Babel and PhraseApp
 
-    :copyright: (c) 2015 by Armin Ronacher.
-    :license: BSD, see LICENSE for more details.
 """
 
 import os
 from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
-from flask.ext.babel import Babel, gettext as gettext_babel, ngettext as ngettext_babel
+from flask.ext.babel import Babel
+from flask_phrase import Phrase, gettext, ngettext
 
-# create our little application :)
+# Create our little application :)
 app = Flask(__name__)
+# Read config
+app.config.from_pyfile('config.py')
 
-# create a Bable instance for our app
+# Hook Babel to our app
 babel = Babel(app)
+
+# Hook Phrase to our app
+phrase = Phrase(app)
 
 # Check the Accept-Language header and make a smart choice
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
-
-
-# Create helpers for PhraseApp
-def gettext(msgid):
-    if app.config['PHRASE_ENABLED']:
-        return "{{__phrase_" + msgid + "__}}"
-    else:
-        return gettext_babel(msgid)
-
-def ngettext():
-    if app.config['PHRASE_ENABLED']:
-        return "{{__phrase_" + msgid + "__}}"
-    else:
-        return ngettext_babel(msgid)
-
-# Reload Jinja gettext 
-app.jinja_env.install_gettext_callables(
-    gettext,
-    ngettext,
-    newstyle=True
-)
-
-
-# Load default config and override config from an environment variable
-app.config.update(dict(
-    DATABASE=os.path.join(app.root_path, 'flaskr.db'),
-    DEBUG=True,
-    SECRET_KEY='development key',
-    USERNAME='admin',
-    PASSWORD='default',
-    LANGUAGES = {
-    'en': 'English',
-    'de': 'Deutsch'
-    },
-    PHRASE_ENABLED = True
-))
-app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 
 def connect_db():
@@ -130,4 +96,4 @@ def logout():
     flash(gettext('You were logged out'))
     return redirect(url_for('show_entries'))
 
-app.run(host='0.0.0.0', port=5000)
+app.run()
