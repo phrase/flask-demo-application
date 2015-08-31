@@ -29,6 +29,6 @@ python flaskr.py
 ````
 
 ## Further reading
-[PhraseApp](https://phraseapp.com)
-[PhraseApp Documentation](https://docs.phraseapp.com)
-[Step-by-Step Tutorial for Flask localization and PhraseApp integration](https://localize-software.phraseapp.com/posts/python-localization-for-flask-applications/)
+* [PhraseApp](https://phraseapp.com)
+* [PhraseApp Documentation](https://docs.phraseapp.com)
+* [Step-by-Step Tutorial for Flask localization and PhraseApp integration](https://localize-software.phraseapp.com/posts/python-localization-for-flask-applications/)
