@@ -12,6 +12,6 @@ LANGUAGES = {
 }
 
 # PhraseApp config
-PHRASE_ENABLED = False
-PHRASE_PREFIX = '{{__'
-PHRASE_SUFFIX = '__}}'
+PHRASEAPP_ENABLED = False
+PHRASEAPP_PREFIX = '{{__'
+PHRASEAPP_SUFFIX = '__}}'
