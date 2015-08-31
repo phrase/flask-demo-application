@@ -1,6 +1,8 @@
 # flask-demo-application
 
-A simple Flask demo application showing [PhraseApp](https://phraseapp.com/) In-Context-Editor integration. Built on top of [Flaskr](http://flask.pocoo.org/docs/0.10/tutorial/introduction/), the Flask tutorial app. .
+A simple Flask demo application showing [PhraseApp](https://phraseapp.com/) In-Context-Editor integration. Built on top of [Flaskr](http://flask.pocoo.org/docs/0.10/tutorial/introduction/), the Flask tutorial app.
+
+For a full step-by-step tutorial, check out our blog post: [Localization For Flask Applications](https://localize-software.phraseapp.com/posts/python-localization-for-flask-applications/)
 
 ## Install
 
