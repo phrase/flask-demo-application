@@ -11,7 +11,7 @@ LANGUAGES = {
     'de': 'Deutsch'
 }
 
-# PhraseApp config
+# Phrase config
 PHRASEAPP_ENABLED = False
 PHRASEAPP_PREFIX = '{{__'
 PHRASEAPP_SUFFIX = '__}}'
