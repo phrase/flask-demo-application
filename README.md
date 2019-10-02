@@ -1,8 +1,8 @@
 # flask-demo-application
 
-A simple Flask demo application showing [PhraseApp](https://phraseapp.com/) In-Context-Editor integration. Built on top of [Flaskr](http://flask.pocoo.org/docs/0.10/tutorial/introduction/), the Flask tutorial app.
+A simple Flask demo application showing [Phrase](https://phrase.com/) In-Context-Editor integration. Built on top of [Flaskr](http://flask.pocoo.org/docs/0.10/tutorial/introduction/), the Flask tutorial app.
 
-For a full step-by-step tutorial, check out our blog post: [Localization For Flask Applications](https://phraseapp.com/blog/posts/python-localization-flask-applications/)
+For a full step-by-step tutorial, check out our blog post: [Localization For Flask Applications](https://phrase.com/blog/posts/python-localization-flask-applications/)
 
 ## Install
 
@@ -31,6 +31,6 @@ python flaskr.py
 ````
 
 ## Further reading
-* [PhraseApp](https://phraseapp.com)
-* [PhraseApp Documentation](https://help.phraseapp.com)
-* [Step-by-Step Tutorial for Flask localization and PhraseApp integration](https://phraseapp.com/blog/posts/python-localization-flask-applications/)
+* [Phrase](https://phrase.com)
+* [Phrase Documentation](https://help.phrase.com)
+* [Step-by-Step Tutorial for Flask localization and Phrase integration](https://phrase.com/blog/posts/python-localization-flask-applications/)

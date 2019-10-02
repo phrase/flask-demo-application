@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    Flaskr + Babel + PhraseApp
+    Flaskr + Babel + Phrase
     ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Modified Flask demo app showing localization with Flask-Babel and PhraseApp
+    Modified Flask demo app showing localization with Flask-Babel and Phrase
 
 """
 
