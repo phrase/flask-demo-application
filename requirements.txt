@@ -2,7 +2,7 @@ Babel==2.10.3
 click==8.1.3
 Flask==2.2.2
 Flask-Babel==2.0.0
-Flask-Phrase==1.0.0
+Flask-Phrase==1.1.0
 importlib-metadata==4.12.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
