@@ -8,12 +8,10 @@
 
 """
 
-import os
 from sqlite3 import dbapi2 as sqlite3
-from flask import Flask, request, session, g, redirect, url_for, abort, \
-     render_template, flash
-from flask.ext.babel import Babel
-from flask_phrase import Phrase, gettext, ngettext
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
+from flask_babel import Babel
+from flask_phrase import Phrase, gettext
 
 # Create our little application :)
 app = Flask(__name__)
