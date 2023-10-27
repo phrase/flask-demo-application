@@ -1,4 +1,10 @@
-# flask-demo-application
+# flask-demo-application (DEPRECATED)
+
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
+
+> This repository for the demo app of Phrase Strings In-Context Editor with `Flask-Phrase` has been deprecated and is no longer maintained. Please refer to the [Flask-Phrase](https://github.com/phrase/Flask-Phrase) repository, where the demo has been moved to and will be maintained. 
+ 
+<hr />
 
 A simple Flask demo application showing [Phrase](https://phrase.com/) In-Context-Editor integration. Built on top of [Flaskr](http://flask.pocoo.org/docs/0.10/tutorial/introduction/), the Flask tutorial app.
 
